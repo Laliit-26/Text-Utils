@@ -5,6 +5,8 @@ import TextForm from './components/TextForm';
 import { useState, useEffect } from 'react';
 import Axios from './components/Axios';
 import Alerts from './components/Alerts';
+import About from './components/About';
+import {Switch, Route,useParams } from 'react-router-dom'
 
 
 function App() {
@@ -53,8 +55,19 @@ function App() {
   return (
     <>
       <Navbar title='TextUtils' mode={mode} toggle={togglemode} clr={sclr} />
-      <Alerts alert={alert}/>
+     <Alerts alert={alert}/>
+    <Switch>
+      <Route exact path="/">
        <TextForm heading='Enter the text to analyze below' mode={mode} showalert={showalert} />
+      </Route>
+      <Route path="/about">
+          <About mode={mode}/>
+      </Route>
+    </Switch>
+  
+     
+     
+     
 {/* <Axios/> */}
     </>
   )
