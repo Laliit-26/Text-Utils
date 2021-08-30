@@ -11,11 +11,20 @@ export default function Navbar(props) {
       >
         <nav
           className={`navbar navbar-expand-lg navbar-${props.mode} bg-${
-            props.mode === 'light' ? 'light' : 'black'
+            props.mode === 'light' ? 'white' : 'black'
           }`}
         >
           <div className='container-fluid'>
-            <Link className='navbar-brand' to='/'>
+            <Link
+              className='navbar-brand'
+              style={{
+                color: props.mode === 'light' ? 'black' : 'white',
+                borderRadius: '10px',
+                backgroundColor: props.mode === 'light' ? 'white' : 'black',
+                margin: '1px 7px',
+              }}
+              to='/'
+            >
               {props.title}
             </Link>
             <button
@@ -35,12 +44,33 @@ export default function Navbar(props) {
             >
               <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
                 <li className='nav-item'>
-                  <Link className='nav-link active' aria-current='page' to='/'>
+                  <Link
+                    className='nav-link active'
+                    style={{
+                      color: props.mode === 'light' ? 'black' : 'white',
+                      borderRadius: '10px',
+                      backgroundColor:
+                        props.mode === 'light' ? 'white' : 'black',
+                      margin: '1px 7px',
+                    }}
+                    aria-current='page'
+                    to='/'
+                  >
                     Home
                   </Link>
                 </li>
                 <li className='nav-item'>
-                  <Link className='nav-link' to='/about'>
+                  <Link
+                    className='nav-link'
+                    style={{
+                      color: props.mode === 'light' ? 'black' : 'white',
+                      borderRadius: '10px',
+                      backgroundColor:
+                        props.mode === 'light' ? 'white' : 'black',
+                      margin: '1px 7px',
+                    }}
+                    to='/about'
+                  >
                     About
                   </Link>
                 </li>
@@ -56,20 +86,19 @@ export default function Navbar(props) {
                   Search
                 </button>
               </form> */}
-              <button
-              
+              <button className="mx-4"
                 style={{
-                  color:
-                     props.mode === 'light' ? 'black' : 'white' , borderRadius: "10px",
+                  color: props.mode === 'light' ? 'black' : 'white',
+                  borderRadius: '10px',
                   backgroundColor: props.mode === 'light' ? 'white' : 'black',
-                  margin:"1px 7px"
-                  }}
+                  margin: '1px 7px',
+                }}
                 onClick={props.clr}
               >
                 red mode
               </button>
               <div
-                className={`form-check form-switch text-${
+                className={`form-check my-3 form-switch text-${
                   props.mode === 'light' ? '#042743' : 'light'
                 }`}
               >
@@ -83,7 +112,7 @@ export default function Navbar(props) {
                   className='form-check-label'
                   htmlFor='flexSwitchCheckDefault'
                 >
-                  Light Mode
+                  Enable DarkMode
                 </label>
               </div>
             </div>

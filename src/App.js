@@ -55,6 +55,7 @@ function App() {
   return (
     <>
       <Navbar title='TextUtils' mode={mode} toggle={togglemode} clr={sclr} />
+     
      <Alerts alert={alert}/>
     <Switch>
       <Route exact path="/">

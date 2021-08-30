@@ -53,38 +53,58 @@ export default function TextFom(props) {
             value={state}
           ></textarea>
           <button
-            className={`m-2 btn-${props.mode === 'dark' ? 'light' : 'dark'}`}
+            disabled={state.length === 0}
+            className={`m-2 my-2 btn-${
+              props.mode === 'dark' ? 'light' : 'dark'
+            }`}
             onClick={convertUpper}
           >
             convert to UpperCase
           </button>
           <button
-            className={`m-2 btn-${props.mode === 'dark' ? 'light' : 'dark'}`}
+            disabled={state.length === 0}
+            className={`m-2 my-2 btn-${
+              props.mode === 'dark' ? 'light' : 'dark'
+            }`}
             onClick={convertLower}
           >
             convert to LowerCase
           </button>
           <button
-            className={`m-2 btn-${props.mode === 'dark' ? 'light' : 'dark'}`}
+            disabled={state.length === 0}
+            className={`m-2 my-2 btn-${
+              props.mode === 'dark' ? 'light' : 'dark'
+            }`}
             onClick={clearText}
           >
             Clear
           </button>
           <button
-            className={`m-2 btn-${props.mode === 'dark' ? 'light' : 'dark'}`}
+            disabled={state.length === 0}
+            className={`m-2 my-2 btn-${
+              props.mode === 'dark' ? 'light' : 'dark'
+            }`}
             onClick={copyText}
           >
             Copy
           </button>
           <button
-            className={`m-2 btn-${props.mode === 'dark' ? 'light' : 'dark'}`}
+            disabled={state.length === 0}
+            className={`m-2 my-2 btn-${
+              props.mode === 'dark' ? 'light' : 'dark'
+            }`}
             onClick={removeSpace}
           >
             remove extra spaces
           </button>
 
           <p></p>
-          <div>word count : {state.split(' ').length - 1} </div>
+          <div>
+            word count :{' '}
+            {state.split(' ').filter((element) => {
+              return element.lenght !== 0
+            }).length - 1}{' '}
+          </div>
 
           <div>charactor count : {state.length} </div>
           <hr></hr>
